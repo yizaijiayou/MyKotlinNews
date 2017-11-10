@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context=".setting.Activity_UserCenter">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:fitsSystemWindows="true"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:id="@+id/toolbar_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fitsSystemWindows="true"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed|snap">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|top"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:paddingTop="190dp">
+
+                <TextView
+                    android:id="@+id/userCenter_autograph"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:gravity="center"
+                    android:onClick="getClick"
+                    android:text="@string/userAutograph" />
+
+            </LinearLayout>
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="@color/colorPrimary"
+                app:layout_collapseMode="pin"
+                app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+        </android.support.design.widget.CollapsingToolbarLayout>
+    </android.support.design.widget.AppBarLayout>
+
+    <include layout="@layout/content_scrolling" />
+
+    <com.scy.mykotlinnews.base.CircleImage
+        android:id="@+id/userCenter_icon"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_gravity="center|top"
+        android:layout_marginTop="50dp"
+        android:elevation="10dp"
+        android:onClick="getClick"
+        android:src="@mipmap/ic_launcher_round"
+        app:dependTargetY="-176dp"
+        app:dependType="y"
+        app:dependsOn="@+id/app_bar"
+        app:layout_behavior="@string/appbarUtils"
+        app:targetHeight="40dp"
+        app:targetWidth="40dp"
+        app:targetX="55dp"
+        app:targetY="8dp" />
+
+    <TextView
+        android:id="@+id/userCenter_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center|top"
+        android:layout_marginTop="180dp"
+        android:elevation="10dp"
+        android:onClick="getClick"
+        android:text="@string/userName"
+        android:textColor="#fff"
+        android:textSize="18sp"
+        app:dependTargetY="-176dp"
+        app:dependType="y"
+        app:dependsOn="@+id/app_bar"
+        app:layout_behavior="@string/appbarUtils"
+        app:targetX="105dp"
+        app:targetY="17dp" />
+
+    <ImageView
+        android:id="@+id/userCenter_back"
+        android:layout_width="wrap_content"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="-100dp"
+        android:alpha="0"
+        android:elevation="10dp"
+        android:gravity="center_vertical"
+        android:onClick="getClick"
+        android:src="@drawable/guide_left_true"
+        android:textColor="@android:color/white"
+        app:dependTargetY="-185dp"
+        app:dependType="y"
+        app:dependsOn="@+id/app_bar"
+        app:layout_behavior="@string/appbarUtils"
+        app:targetAlpha="1"
+        app:targetY="0dp" />
+
+</android.support.design.widget.CoordinatorLayout>
