@@ -5,7 +5,7 @@
     （1）[@hdodenhof](https://github.com/hdodenhof)提供的[CircleImageView](https://github.com/hdodenhof/CircleImageView)，圆形头像
     （2）[@zoonref](https://github.com/zoonooz)提供的[SimpleViewBehavior](https://github.com/zoonooz/simple-view-behavior)，AppBarLayout的Behavior
 ## 注意
-    本项目的新闻数据来源阿里云的新闻头条API，访问次数有限。若发现新闻无数据请不要惊讶。
+    本项目的新闻数据来源[阿里云]的新闻头条API，访问次数有限。若发现新闻无数据请不要惊讶。
 ## 最后
     （1）若有侵权的地方请联系35380991@qq.com
     （2）本人也才接触Kotlin不久，若有不足之处请谅解，也可以发邮件（35380991@qq.com）给与我帮助，感激不尽。
