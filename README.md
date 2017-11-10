@@ -1,5 +1,5 @@
 ## 1.kotlin的基本信息
-  （1）var为变量，val为常量
+  （1）var为变量，val为常量<br>&nbsp
   （2）打开界面的写法：startActivity(Intent(this, Activity_UserCenter::class.java))
 ## 感谢(为感谢他们提供的帮助，我并未转成kotlin)
   （1）[@hdodenhof](https://github.com/hdodenhof)提供的[CircleImageView](https://github.com/hdodenhof/CircleImageView)，圆形头像
