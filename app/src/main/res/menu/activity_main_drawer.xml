@@ -16,10 +16,10 @@
             <!--android:id="@+id/nav_slideshow"-->
             <!--android:icon="@mipmap/wearher2"-->
             <!--android:title="Slideshow" />-->
-        <item
-            android:id="@+id/nav_manage"
-            android:icon="@mipmap/weather"
-            android:title="@string/action_mian_weather" />
+        <!--<item-->
+            <!--android:id="@+id/nav_manage"-->
+            <!--android:icon="@mipmap/weather"-->
+            <!--android:title="@string/action_mian_weather" />-->
     </group>
 
     <item android:title="Communicate">

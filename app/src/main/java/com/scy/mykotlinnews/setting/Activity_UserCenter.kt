@@ -122,9 +122,11 @@ class Activity_UserCenter : AppCompatActivity() {
         if (resultCode == Activity.RESULT_OK) {
             when (requestCode) {
                 OPEN_PICTURE -> {
-                    Glide.with(this).load(data.data.toString()).into(userIcon)
-                    SqlUtils.getInstance.updateUser("image", data.data.toString())
-                    MainActivity.updateUserMessgae = true
+                    if(!TextUtils.isEmpty(data.data.toString())) {
+                        Glide.with(this).load(data.data.toString()).into(userIcon)
+                        SqlUtils.getInstance.updateUser("image", data.data.toString())
+                        MainActivity.updateUserMessgae = true
+                    }
                 }
             }
         }

@@ -18,12 +18,6 @@ import android.widget.ImageView;
 
 import com.scy.mykotlinnews.R;
 
-/**
- * Project name ElectroCar
- * Created by 哎呀呀！要努力打代码啦！··
- * on 2017/5/2 15:27.
- * 本类描述：
- */
 public class CircleImage extends ImageView {
 
     private static final ScaleType SCALE_TYPE = ScaleType.CENTER_CROP;

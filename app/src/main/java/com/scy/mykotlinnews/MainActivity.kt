@@ -144,9 +144,9 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             R.id.nav_camera -> {
                 toast("我是第一行")
             }
-            R.id.nav_manage -> {
-
-            }
+//            R.id.nav_manage -> {
+//
+//            }
             R.id.nav_share -> {
 
             }
