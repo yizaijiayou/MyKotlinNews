@@ -99,8 +99,8 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         fragments.add(Fragment_Science())
 
         //结合TabLayout与ViewPager
-//        viewPager.adapter = Adapter_Fragment(this, fragments, titles, supportFragmentManager)
-//        tabLayout.setupWithViewPager(viewPager)   //为了能让单击tabLayout的Item不出现切换效果，但是需要保留左右切换滑动，就必须把这句话放在addOnTabSelectedListener之前
+        viewPager.adapter = Adapter_Fragment(this, fragments, titles, supportFragmentManager)
+        tabLayout.setupWithViewPager(viewPager)   //为了能让单击tabLayout的Item不出现切换效果，但是需要保留左右切换滑动，就必须把这句话放在addOnTabSelectedListener之前
 
         tabLayout.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
             override fun onTabReselected(tab: TabLayout.Tab) {}
