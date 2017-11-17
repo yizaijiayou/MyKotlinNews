@@ -66,6 +66,8 @@
         android:elevation="10dp"
         android:onClick="getClick"
         android:src="@mipmap/ic_launcher_round"
+        app:border_color="@color/color_white"
+        app:border_width="@dimen/circleImage"
         app:dependTargetY="-176dp"
         app:dependType="y"
         app:dependsOn="@+id/app_bar"

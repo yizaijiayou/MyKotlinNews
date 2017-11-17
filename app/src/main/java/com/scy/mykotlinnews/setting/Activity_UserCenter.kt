@@ -57,8 +57,8 @@ class Activity_UserCenter : AppCompatActivity() {
         val user = SqlUtils.getInstance.checkUser()
         if (user.name != "暂无用户") {
             try {
-            Picasso.with(this).load(user.image).error(R.mipmap.ic_launcher_round).into(userIcon)
-            }catch(e:Exception){
+                Picasso.with(this).load(File(user.image)).error(R.mipmap.ic_launcher_round).into(userIcon)
+            } catch (e: Exception) {
                 e.printStackTrace()
             }
             userName.text = user.name
@@ -122,9 +122,10 @@ class Activity_UserCenter : AppCompatActivity() {
         if (resultCode == Activity.RESULT_OK) {
             when (requestCode) {
                 OPEN_PICTURE -> {
-                    if(!TextUtils.isEmpty(data.data.toString())) {
-                        Glide.with(this).load(data.data.toString()).into(userIcon)
-                        SqlUtils.getInstance.updateUser("image", data.data.toString())
+                    if (!TextUtils.isEmpty(data.data.toString())) {
+                        val picatureFile = getPictureFile(data.data)
+                        Glide.with(this).load(picatureFile).into(userIcon)
+                        SqlUtils.getInstance.updateUser("image", picatureFile.path)
                         MainActivity.updateUserMessgae = true
                     }
                 }
@@ -153,15 +154,15 @@ class Activity_UserCenter : AppCompatActivity() {
     }
 
     fun getPictureFile(uri: Uri): File {
-        val s = uri.toString().split(":")[0]
-        return if (s == "file") {
+        val s = uri.toString().split(":".toRegex()).dropLastWhile({ it.isEmpty() }).toTypedArray()[0]
+        return if (s == "file") {//     file:///storage/emulated/0/MIUI/wallpaper/sb10063035c-001_%26_f7cd5d79-6e01-419a-b668-130c19b481db.jpg
             File(URI(uri.toString()))
-        } else {
+        } else {//    content://media/external/images/media/33
             val proj = arrayOf(MediaStore.Images.Media.DATA)
-            val cursor = contentResolver.query(uri, proj, null, null, null)
-            val colum_index = cursor.getColumnIndexOrThrow(MediaStore.Images.Media.DATA)
-            cursor.moveToNext()
-            val filePath = cursor.getString(colum_index)
+            val cursor = getContentResolver().query(uri, proj, null, null, null)
+            val column_index = cursor!!.getColumnIndexOrThrow(MediaStore.Images.Media.DATA)
+            cursor.moveToFirst()
+            val filePath = cursor.getString(column_index)
             cursor.close()
             File(filePath)
         }

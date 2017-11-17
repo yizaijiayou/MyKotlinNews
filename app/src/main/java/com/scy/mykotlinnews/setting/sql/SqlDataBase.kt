@@ -20,7 +20,7 @@ class SqlDataBase(val context: Context, name: String, version: Int) : SQLiteOpen
                 "_id INTEGER PRIMARY KEY NOT NULL," +   //主键如果是integer类型的默认是自增长的
                 "name VARCHAR," +
                 "autograph VARCHAR," +
-                "image VARCHAR," +
+                "image VARCHAR(300)," +
                 "sex VARCHAR);"
         db.execSQL(sqlUser)
 

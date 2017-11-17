@@ -36,6 +36,10 @@ class Okhttp3Utils {
         val request = Request.Builder().url(url).header("Authorization","APPCODE 5cb04855819641e4bbb124bb0b1a4723").build()
         okHttpClient.newCall(request).enqueue(callback)
     }
+    fun get(url:String,callback:Callback){
+        val request = Request.Builder().url(url).build()
+        okHttpClient.newCall(request).enqueue(callback)
+    }
     fun post(url: String, body: FormBody,callback: Callback) {
         val request = Request.Builder().post(body).url(url).build()
         okHttpClient.newCall(request).enqueue(callback)
