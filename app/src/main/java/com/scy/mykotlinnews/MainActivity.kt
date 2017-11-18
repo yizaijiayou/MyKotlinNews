@@ -76,7 +76,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         iconLocation = view.findViewById<TextView>(R.id.locationText)
         iconWeatherText = view.findViewById<TextView>(R.id.iconWeatherText)
         iconWeatherD = view.findViewById<TextView>(R.id.iconWeatherD)
-        iconProgressBar = view.findViewById<ProgressBar>(R.id.progressBar)
+        iconProgressBar = view.findViewById(R.id.progressBar)
 
         iconBackground.setOnClickListener(this)
         iconImage.setOnClickListener(this)

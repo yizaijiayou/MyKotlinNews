@@ -26,7 +26,7 @@ fun getNews(type: String,beanNews: GetBeanNews) {
     Okhttp3Utils.instance.getNews(ip + type, object : Callback {
         override fun onResponse(call: Call, response: Response) {
             val str = response.body()?.string()
-            Log.d("Nework", "---->" + str)
+            Log.d("$type --->Nework", "---->" + str)
             beanNews.getBeanNews(Gson().fromJson<Bean_News>(str,Bean_News::class.java))
         }
 

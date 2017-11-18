@@ -32,13 +32,9 @@ class Fragment_Science : Fragment_Top() {
             firstRefresh = true
         }
     }
-//    override fun setUserVisibleHint(isVisibleToUser: Boolean) {
-//        super.setUserVisibleHint(isVisibleToUser)
-//        Log.d("Fragment","---------------Fragment_Science-------------"+isVisibleToUser)
-//    }
-//
-//    override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-//        return inflater!!.inflate(R.layout.fragment_news,container,false)
-//    }
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+        addMessage = "shehui"
+    }
 }
 
